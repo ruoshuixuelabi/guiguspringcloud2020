@@ -1,0 +1,31 @@
+server:
+  port: 8801
+eureka:
+  instance:
+    instance-id: cloud-stream-provider8801
+    prefer-ip-address: true
+  client:
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+spring:
+  application:
+    name: cloud-stream-provider
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 192.168.1.130
+      bindings:
+        output:
+          destination: studyExchange
+          content-type: application/json
+          binder: defaultRabbit
+  rabbitmq:
+    host: 192.168.1.130

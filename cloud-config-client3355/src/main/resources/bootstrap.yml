@@ -1,0 +1,28 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: 192.168.1.130
+eureka:
+  instance:
+    instance-id: config-client3355
+    prefer-ip-address: true
+  client:
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

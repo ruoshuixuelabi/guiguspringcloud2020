@@ -1,0 +1,22 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    url: jdbc:mysql://192.168.1.130:3306/db2020?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  cloud:
+    consul:
+      host: 192.168.1.130
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        #不写这个配置，在docker下的consul里面健康检查会失败
+        prefer-ip-address: true
+mybatis-plus:
+  #实体扫描,多个package用逗号或者分号分隔
+  typeAliasesPackage: com.atguigu.sprigncloud.entity

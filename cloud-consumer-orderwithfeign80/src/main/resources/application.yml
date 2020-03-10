@@ -1,0 +1,20 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-order-service
+eureka:
+  client:
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+ribbon:
+  #请求处理的超时时间
+  ReadTimeout: 5000
+  #请求连接的超时时间
+  ConnectTimeout: 3000
+logging:
+  level:
+    com.atguigu.springcloud.service.PaymentFeignService: debug

@@ -1,0 +1,29 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ruoshuixuelabi/springcloud-configdemo
+#          search-paths:
+      label: master
+  rabbitmq:
+    host: 192.168.1.130
+eureka:
+  instance:
+    instance-id: cloud-config-center3344
+    prefer-ip-address: true
+  client:
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

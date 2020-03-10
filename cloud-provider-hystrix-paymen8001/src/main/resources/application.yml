@@ -1,0 +1,24 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cloud-hystrix-payment-service
+  datasource:
+    url: jdbc:mysql://192.168.1.130:3306/db2020?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+eureka:
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+  client:
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+mybatis-plus:
+  #实体扫描,多个package用逗号或者分号分隔
+  typeAliasesPackage: com.atguigu.sprigncloud.entity

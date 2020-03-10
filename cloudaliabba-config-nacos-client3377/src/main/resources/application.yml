@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    #在 Nacos Spring Cloud 中，dataId 的完整格式如下：${prefix}-${spring.profile.active}.${file-extension}
+    active: dev
+#    active: test

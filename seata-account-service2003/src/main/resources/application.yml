@@ -1,0 +1,21 @@
+server:
+  port: 2003
+spring:
+  application:
+    name: seata-account-service
+  datasource:
+    url: jdbc:mysql://192.168.1.130:3306/seata_account?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alibaba:
+      seata:
+        #此处的ruoshui_tx_group要与配置文件一致
+        tx-service-group: my_test_tx_group
+mybatis-plus:
+  #实体扫描,多个package用逗号或者分号分隔
+  typeAliasesPackage: com.atguigu.sprigncloud.entity
