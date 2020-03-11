@@ -36,7 +36,7 @@ public class CircleBreakController {
         CommonResult<Payment> result = restTemplate.getForObject(serviceUrl + "/paymentSQL/" + id, CommonResult.class);
         if (id == 4) {
             throw new IllegalArgumentException("参数非法");
-        } else if (result.getDada() == null) {
+        } else if (result.getData() == null) {
             throw new NullPointerException("空指针");
         }
         return result;
