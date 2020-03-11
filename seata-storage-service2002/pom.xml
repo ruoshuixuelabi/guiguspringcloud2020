@@ -15,7 +15,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -33,18 +33,18 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>seata-all</artifactId>
-                    <groupId>io.seata</groupId>
-                </exclusion>
-            </exclusions>
+            <!--            <exclusions>-->
+            <!--                <exclusion>-->
+            <!--                    <artifactId>seata-all</artifactId>-->
+            <!--                    <groupId>io.seata</groupId>-->
+            <!--                </exclusion>-->
+            <!--            </exclusions>-->
         </dependency>
-        <dependency>
-            <artifactId>seata-all</artifactId>
-            <groupId>io.seata</groupId>
-            <version>0.9.0</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <artifactId>seata-all</artifactId>-->
+        <!--            <groupId>io.seata</groupId>-->
+        <!--            <version>0.9.0</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>com.atguigu.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
