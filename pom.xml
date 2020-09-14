@@ -50,8 +50,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <druid.version>1.1.21</druid.version>
-        <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
-        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
         <mybatis-plus-boot.version>3.3.2</mybatis-plus-boot.version>
     </properties>
     <!-- 子模块继承之后，提供作用:锁定版本 -->
@@ -77,7 +77,7 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.1.RELEASE</version>
+                <version>2.2.2.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
